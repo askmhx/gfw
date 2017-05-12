@@ -8,6 +8,8 @@ import (
 	"fmt"
 )
 
+
+//添加连接到vpn之后仍然可以使用的ip，如公司内网的ip等
 const const_MY_IPS = `192.168.199.0/24
 ,10.0.20.0/24
 ,10.1.60.0/24
@@ -24,8 +26,10 @@ const const_MYIP_SPILT_CHAR = ","
 
 const const_ROOT_DIR = "/Users/Crazz/Google Drive/软件/PPP/"
 
+//模板目录
 const const_TPL_DIR = const_ROOT_DIR +"TPL/"
 
+//生成文件目录
 const const_OUT_DIR = const_ROOT_DIR +"OUT/"
 
 const const_IP_UP_FILE = "ip-up"

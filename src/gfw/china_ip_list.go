@@ -8,9 +8,12 @@ import (
 	"strconv"
 )
 
+//最APNIC获取国内的IP
 const const_APNIC_URL = "http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest"
 
 const const_CHINA_IP_V4 = "|CN|ipv4|"
+
+//IPV6暂时不需要
 //const const_CHINA_IP_V6 = "|CN|ipv6|"
 
 const const_LINE_SPILT_CHAR = "|"
@@ -43,6 +46,7 @@ func GetChinaIP() []string {
 	return lines
 }
 
+//转换IP格式
 func toIp(ip string) string {
 	strs := strings.Split(ip, const_LINE_SPILT_CHAR)
 	rIp := strs[3]
