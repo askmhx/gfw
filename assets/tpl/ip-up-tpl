@@ -1,0 +1,26 @@
+#!/bin/sh
+# Generate on {{.CurtDate}} by mhxdev@gmail.com
+
+export PATH="/bin:/sbin:/usr/sbin:/usr/bin"
+
+OLDGW=`netstat -nr | grep '^default' | grep -v 'ppp' | sed 's/default *\([0-9\.]*\) .*/\1/'`
+
+if [ ! -e /tmp/pptp_oldgw ]; then
+    echo "${OLDGW}" > /tmp/pptp_oldgw
+fi
+
+{{range .IpList -}}
+route add {{.}} "${OLDGW}"
+{{end}}
+
+if [ -e /usr/bin/dscacheutil ]; then
+      dscacheutil -flushcache
+fi
+
+if [ -e /usr/sbin/discoveryutil ]; then
+    discoveryutil udnsflushcaches
+fi
+  
+if [ -e /usr/sbin/mDNSResponder ]; then
+    killall -HUP mDNSResponder
+fi

@@ -1,0 +1,14 @@
+#!/bin/sh
+# Generate on {{.CurtDate}} by mhxdev@gmail.com
+
+export PATH="/bin:/sbin:/usr/sbin:/usr/bin"
+
+if [ ! -e /tmp/pptp_oldgw ]; then
+        exit 0
+fi
+
+OLDGW=`cat /tmp/pptp_oldgw`
+
+{{range .IpList -}}
+route delete {{ . }} ${OLDGW}
+{{end}}
