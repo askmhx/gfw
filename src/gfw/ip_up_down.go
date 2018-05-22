@@ -11,11 +11,13 @@ import (
 
 //添加连接到vpn之后仍然可以使用的ip，如公司内网的ip等
 const const_MY_IPS = `192.168.199.0/24
-,10.0.20.0/24
-,10.1.60.0/24
-,10.0.23.0/24
-,10.0.21.0/24
-,10.0.203.0/24
+,192.168.0.0/24
+,10.0.0.0/16
+,10.1.0.0/16
+,10.9.0.0/16
+,10.20.0.0/16
+,10.6.50.0/24
+,10.6.44.0/24
 ,116.236.217.148
 ,116.236.217.146
 ,103.47.136.125
@@ -24,7 +26,7 @@ const const_MY_IPS = `192.168.199.0/24
 
 const const_MYIP_SPILT_CHAR = ","
 
-const const_ROOT_DIR = "/Users/Crazz/Google Drive/软件/PPP/"
+const const_ROOT_DIR = "/Users/Crazz/Google Drive/Software/PPP/"
 
 //模板目录
 const const_TPL_DIR = const_ROOT_DIR +"TPL/"
