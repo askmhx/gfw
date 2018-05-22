@@ -14,3 +14,5 @@
 > 把生成的ip-up和ip-down文件copy到/etc/ppp/中
 
 `sudo cp ip-* /etc/ppp/`
+
+技术交流QQ群：154569864
